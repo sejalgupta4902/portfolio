@@ -33,35 +33,99 @@
 
 		<section>
 			<h2>Discoveries & Insights</h2>
+			Each of the questions were explored with an initial exploration into the data quality and profiling of the fields. From there, there is a deep dive into the question and specific fields that may help to answer the question better.
+
+			<h3>Preliminary Dataset Understanding</h3>
+			<p>
+				Before even diving into a deeper analysis, I had to first figure out what each of the LU codes stood for. Based on the Property Assessment guidelines, here are the 
+				<ol>
+					<li>A - Residential 7 or more units</li>
+					<li>E - Tax exempt</li>
+					<li>AH - Agricultural/Horticultural</li>
+					<li>EA - Tax exempt (121A)</li>
+					<li>C - Commercial</li>
+					<li>I - Industrial</li>
+					<li>CC - Commercial condominium</li>
+					<li>R1 - Residential 1 family</li>
+					<li>CD - Residential condominium unit</li>
+					<li>R2 - Residential 2 family</li>
+					<li>CL - Commercial land</li>
+					<li>R3 - Residential 3 family</li>
+					<li>CM - Condominium main (physical structure housing all related condo units with no assessed value)</li> 
+					<li>R4 - Residential 4 or more family</li>
+					<li>RC - Mixed use (res. and comm.)</li>
+					<li>CP - Condo parking</li>
+					<li>RL - Residential land</li>
+				</ol>
+			</p>
 
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="1_a_raw.png" alt="" width="1000"/>
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+				A bar chart of the building types, by the LU codes, prior to the conversion.
+			</figure>
+			
+			<p>
+				In the above figue, we see the spread of land use within the dataset. Residential land (R1, R2, R3) is the most prevalent with commerical right behind that. However, we notice there are some duplicates in the initial data with RL appearing a few times. Therefore, we must clean up this to fully analyse the impact. This part of the analysis will be conducted further in the first question deep dive.
+			</p>
+
+			<figure>
+				<img src="1_a_raw_year_built.png" alt="" width="1000"/>
+				<figcaption>
+				A histogram of the buildings built in a specific year. The years are in 10 year buckets.
+			</figure>
+
+			<p>
+				The above histogram is supposed to show a clean distribution of years. However, we notice that some of the years are denoted as "0". Currently, the data implies that some properties are built in year 0, but that may have just been a default value. Since this is not possible, it is clear that we need to clean the data to remove any data that has a year 0 when creating plots with the year built field. An analysis involving the year built will be further explored with question 1.
+			</p>
+
+			<figure>
+				<img src="3_a_raw_total.png" alt="" width="1000"/>
+				<figcaption>
+				A scatter plot of the Post Conversion Year vs. the Total Value of Property. We make sure to filter out all the properties that have the Total Value prior and post.
+			</figure>
+
+			<p>
+				The above scatter chart is helping to visualize the distribution of the post years and the total values. We find some initial insights that are quite interesting. First, there are several gaps in the data, as this dataset claims there were no post years in 2018, 2021, and 2022. Since there is no clear understanding as to why there is a lack of data, we examined the relationship between the prior and post years. Based on the data cleaning, all the prior years are the year of the conversion and the post year is plus one to the prior year. Additionally, it is interesting that most of property values cluster around the lower values of 0M to 10M. 
+			</p>
+
+			<h3>What buildings are most likely to get converted?</h3>
+			
+			We continue to hear in the news that many buildings are getting converted into condos. Is there a correlation between certain attributes about a building and the likelihood that it gets converted? To investigate this, I first looked into what types of building are most prevalent prior to any conversion.
+
+			<p>
+				After cleaning up the duplicate labels, we compare the building types prior to the conversion and the building types post the conversion.
+			</p>
+
+			<figure>
+				<img src="1_b_comparison.png" alt="" width="1000"/>
+				<figcaption>
+					Two bar charts comparing number of properties with land use labels prior and post conversion.
 				</figcaption>
 			</figure>
 
+			<p>We instantly notice a sharp change in the distribution of the land use types. There is a great increase in condominiums after the conversions of the buildings and stark reduction in the number of residential units. Specifically, "CM" accounts for the majority of all the land use in Boston after the conversions, as per this dataset.</p>
+
+			<p>Seeing the total numbers before and after, I wonder what types of buildings are most likely to convert into other buildings?</p>
+
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="1_c_heatmap.png" alt="" width="1000"/>
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+				Heatmap of the land use code prior to conversion to the land use code post conversion. The colors are generated based on the count of the post conversion properties with the label.
 				</figcaption>
 			</figure>
 
+			<p>To visualize the land use label to land use label conversion, I generated a heatmap to see which land use labels are descreasing most frequently and which land use labels are increasing. In the heatmap, the "CM" column shows the greatest amount of activity with special attention from the residential land as expected. We also notice that very few properties are converted to be tax exempt or residential. The heatmap indicates through the darkness of the color the number of property conversions of that type.</p>
+
+			<p>At the same time, it is still quite difficult to understand what percentage of the "CM" conversions are attributed to each of the land use labels / property types.</p>
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="1_d_pie_chart.png" alt="" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+				A pie chart of the prior properties (with land use labels) that were converted into "CM" type.
 				</figcaption>
 			</figure>
 
-			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
-				<figcaption>
-				ENTER IMAGE CAPTION HERE.
-				</figcaption>
-			</figure>
-
+			<p>Confirming our suspicions from earlier, we can early tell that the </p>
 			<figure>
 				<img src="IMAGE_FILENAME" alt="" />
 				<figcaption>
