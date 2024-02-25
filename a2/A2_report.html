@@ -125,9 +125,9 @@
 				</figcaption>
 			</figure>
 
-			<p>To visualize the land use label to land use label conversion, I generated a heatmap to see which land use labels are descreasing most frequently and which land use labels are increasing. In the heatmap, the "CM" column shows the greatest amount of activity with special attention from the residential land as expected. We also notice that very few properties are converted to be tax exempt or residential. The heatmap indicates through the darkness of the color the number of property conversions of that type.</p>
+			<p>To visualize the prior and post land use label conversion, I generated a heatmap to explore the relationship between a building's function before and after a condo conversion. The heatmap indicates through the darkness of the color the number of property conversions of that type. In the heatmap, the "CM" column shows the greatest amount of activity with special attention from the residential land as expected(given the conversion is to a condo). One interesting observation is that a strong relationship was found between residential building containing one to two families and conversion to a condo. This effect suggests a higher probability of these buildings to be converted. We also notice that very few properties are converted to be tax exempt or residential.</p>
 
-			<p>At the same time, it is still quite difficult to understand what percentage of the "CM" conversions are attributed to each of the land use labels / property types.</p>
+			<p>At the same time, it is still quite difficult to understand what percentage of the "CM" conversions are attributed to each of the land use labels / property types. What buildings in particular are being converted to this type?</p>
 			
 			<figure>
 				<img src="1_d_pie_chart.png" alt="" width="80%"/>
@@ -138,20 +138,20 @@
 
 			<p>Confirming our suspicions from earlier, we can tell that the residential buildings, R2 and R3, really contributed to the CM land use type. It makes sense that 2-family and 3-family land was frequently converted into condominiums. Also, it was interesting that CD, another condominium type for residential condominiums, converted into CM as well. CM is the most general of the condos. </p>
 			
-			<p>Beyond the building type, the year that the original building is built can also impact if there is a conversion.</p>
+			<p>Beyond the building type, the year that the original building is built can also impact if there is a conversion. Though this is probably not the main motivation in converting a building, it could provide a little more insight into which buildings are seen as potentials for conversion. Prompted me to ask: what age buildings are typically being converted?</p>
 			<figure>
 				<img src="1_e_built_histogram.png" alt="" width="80%"/>
 				<figcaption>
 				A histogram of the number of properties built in a specific year. The years are in 10 year buckets and the data has been cleaned to remove data that is outside of 1700-2024.
 				</figcaption>
 			</figure>
-			<p>In on our preliminary analysis, we had constructed a very raw / initial histogram. However, in this revised version, we can see that most of the properties are built in 1900-1909. There are two peaks in the data: one around the early 1900s and one in 2010s. There is a clear decrease in the number of properties in the 1930s-1970s which can make sense with the Great Depression, World War II, and the Baby Boom of the 50s. Many families were seeking the "American Dream" and leaving big cities for the suburbs. While we cannot know for sure, there might not have been many buildings built during that time.</p>
+			<p>In our preliminary analysis, we constructed a very raw / initial histogram. However, in this revised version, we can see that most of the properties are built in 1900-1909. There are two peaks in the data: one around the early 1900s and one in 2010s. There is a clear decrease in the number of properties in the 1930s-1970s which can make sense with the Great Depression, World War II, and the Baby Boom of the 50s. Many families were seeking the "American Dream" and leaving big cities for the suburbs. While we cannot know for sure, there might not have been many buildings built during that time. Perhaps these trends are more emblematic of construction in Boston during different decades, than causes for conversion.</p>
 
 			<p>Through the analysis above, we have done a deep dive into the types of properties and the age of the properties are most likely to be converted.</p>
 			
 			<h3>Where do condo conversions happen in Boston?</h3>
 
-			<p>Now, since we have seen the type of buildings or properties that undergo these conversions, there might be a correlation between the location of properties and the chance of the property having a conversion. As such, we being analyze the different zipcodes and the number of conversions in each.</p>
+			<p>Now, since we have seen the type of buildings or properties that undergo these conversions, there might be a correlation between the location of properties and the chance of the property having a conversion. As such, we analyze the different zipcodes and the number of conversions in each. These trends could suggest a pattern of socioeconomic influences, particularly driven by unequitable geographic distributions of wealth and development.</p>
 			<figure>
 				<img src="2_b_num_conversions.png" alt="" width="80%"/>
 				<figcaption>
@@ -159,21 +159,21 @@
 				</figcaption>
 			</figure>
 
-			<p>To create this visualization, we count the number of conversions or instances of the zipcodes that are present in the dataset. We notice that 02127, 02130, and 02131 have the most conversions. When these zipcodes are searched online for their demographics and their socoeconomic status, these areas are usually where you may find lower income households and cheaper housing. If this is true, this may imply that the conversions are taking place in areas that have more affordable housing. Further investigation needs to be done to help determine the validity of those claims.</p>
+			<p>To create this visualization, we count the number of conversions or instances of the zipcodes that are present in the dataset. We notice that 02127, 02130, and 02131 have the most conversions. When these zipcodes are searched online for their demographics and their socioeconomic status, these areas are usually where you may find lower income households and cheaper housing. If this is true, this may imply that the conversions are taking place in areas that have more affordable housing. Further investigation needs to be done to help determine the validity of those claims.</p>
 			
-			<p>I wonder how the city of Boston has changed from before the conversions to now? Specifically, how has the prevalence of certain land use types changed in Boston</p>
+			<p>I wonder how the city of Boston has changed from before the conversions to now? Specifically, how has the prevalence of certain land use types changed in Boston.</p>
 			<figure>
 				<img src="2_c_multi_map.png" alt="" width="80%"/>
 				<figcaption>
 				A series of maps to depict the change in land use prior and post property conversions. The top row shows the prior property conversions for the city of Boston for CM, CD, R2, and R3. The bottom row shows the post property conversions for the city of Boston for CM, CD, R2, and R3.
 				</figcaption>
 			</figure>
-			<p>Earlier, we looked at the most prevalent land use types before and after the conversions. Taking the most prevalent categories (CM, CD, R2, R3), we create maps of the frequency of the property conversions to visualize the impact of the conversions. We can clearly see the decrease in residential living spaces around the Boston area, specifically through the maps in the right most columns, that can occupy two or three families. At the same time, it feels almost as CD, R2, and R3 priors combined together to create the post CM map. This indicates that the condominium creation or conversion has spanned the greater boston area, removing the residential living spaces.</p>
+			<p>Earlier, we looked at the most prevalent land use types before and after the conversions. Taking the most prevalent categories (CM, CD, R2, R3), we create maps of the frequency of the property conversions to visualize the impact of the conversions. We can clearly see the decrease in residential living spaces around the Boston area, specifically through the maps in the right most columns, that can occupy two or three families. At the same time, it feels almost as CD, R2, and R3 priors combined together to create the post CM map. This indicates that the condominium creation or conversion has spanned the greater Boston area, removing the residential living spaces in place of condos.</p>
 			
 			<p>Through the geography of the conversions, we have initial insights about conversions in low income areas and a larger reduction of residential places throughout Boston.</p>
 			
 			<h3>How does the value of property change?</h3>
-			<p>Whenever you hear about condo conversions, it is usually associated with the motivation to make money. Consequently, it is quite fitting to take a look into how the valuation of various aspects of the property change after a conversion.</p>
+			<p>Whenever you hear about condo conversions, it is usually associated with the motivation to make money. Consequently, it is quite fitting to take a look into how the valuation of various aspects of the property change after a conversion. This could provide insight into the motivation for many of these decisions while potentially suggesting the future state of these conversions.</p>
 			
 			<figure>
 				<img src="3_b_cleaned_total.png" alt="" width="80%"/>
@@ -181,7 +181,7 @@
 				A plot of the median change in total value of the property based on the post year of conversion
 				</figcaption>
 			</figure>
-			<p>To construct the figure above, we calculated the change in the total value of the property (post value - prior value). From there, the median for each post year was plotted. The median was picked in the case of any outliers to ensure no heavy influences on the data were present. Building off of the figure in our preliminary analysis, we still see gaps in our data which is expected. However, in 2020, there is a negative change in total valuation of the property. This is plausible due to the start of the pandemic; there were lots of fluctuations in the market. Additionally, the change in total value is quite low for 2024, but since it is only the beginning of the year, we may not have the complete picture of the data just yet. </p>
+			<p>To construct the figure above, I calculated the change in the total value of the property (post value - prior value). From there, the median for each post year was plotted. The median was picked in the case of any outliers to ensure no heavy influences on the data were present, as suggested previously in Figure 3. Building off of this figure in our preliminary analysis, we still see gaps in our data which is expected. However, in 2020, there is a negative change in total valuation of the property. This is plausible due to the start of the pandemic; there were lots of fluctuations in the market. Additionally, the change in total value is quite low for 2024, but since it is only the beginning of the year, we may not have the complete picture of the data just yet. </p>
 
 			<figure>
 				<img src="3_c_building_value.png" alt="" width="80%"/>
@@ -189,7 +189,7 @@
 				A bar graph of the median change in building value based on the land use category.
 				</figcaption>
 			</figure>
-			<p>To breakdown the valuation, we examine the building value. Most buildings increase in value after the conversion, as send in the plot. RC and R4 are exceptions that may need further investigation to understand exactly why they are decreasing in value. Also, R2, R3, and CD types don't yield much increase in building valuation. Could this be because there is such a high volume of these conversions and not everyone is guaranteed to succeed? Or, are there are factors at play that are contributing to their high volume?</p>
+			<p>To breakdown the valuation, we examine the change in building value. Most buildings increase in value after the conversion, as seen in the plot. RC and R4 are exceptions that may need further investigation to understand exactly why they are decreasing in value. Also, R2, R3, and CD types don't yield much increase in building valuation. Could this be because there is such a high volume of these conversions and not everyone is guaranteed to succeed? Or, are there are factors at play that are contributing to their high volume?</p>
 
 			<figure>
 				<img src="3_d_land_value.png" alt="" width="80%"/>
@@ -197,7 +197,7 @@
 				A map of the median change in land value between prior and post conversion based on zipcode.
 				</figcaption>
 			</figure>
-			<p>Another aspect of the valuation is attributed to the land value. We notice that areas like 02116, 02115, 02125, and 02210 really benefit from conversions by increasing the land value. However, areas like 02127, 02130, and 02129 experience slight decreases in the prices of land. While it is unclear what exactly determines the increase or decrease in price, overall most of the areas remained either net 0 or slightly gained in their land property value.</p>
+			<p>Another aspect of the valuation is attributed to the land value. We notice that areas like 02116, 02115, 02125, and 02210 really benefit from conversions by increasing the land value. However, areas like 02127, 02130, and 02129 experience slight decreases in the prices of land. While it is unclear what exactly determines the increase or decrease in price, most of the building in these areas remained either net 0 or slightly gained in their land property value.</p>
 			
 			<p>In the past question, we explored the financial incentives for having a conversion of property, specifically the total value, building value, and land value.</p>
 		</section>
