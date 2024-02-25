@@ -22,7 +22,11 @@
 
 			<h3>Overall Analysis Questions</h3>
 			<p>
-				The article "Renters at a brand-new Somerville building surprised by news: Millbrook's going condo" outlines a tale of a building in Somerville that was converted in condos. Interestingly, the building was constructed only the year prior to the announcement for conversion. Renters were not informed of the transition, and they were displaced from their homes if they could not afford buying the place. Some of these rentals were specifically set aside for low income / artists. This sad story made me question about the prevalence of condo conversions. Are they universally happening or are segments of the population targetted more frequently? Which areas are specifically convertted? What economic incentives exist for condo conversions? These larger questions lead me to generate the following three sub questions for my analysis.
+				The article "Renters at a brand-new Somerville building surprised by news: Millbrook's going condo" outlines a tale of a building in Somerville that was converted into condos. Interestingly, the building was constructed only the year prior to the announcement for conversion. Renters were not informed of the transition, and they were displaced from their homes if they could not afford buying the unit. Some of these rentals were specifically set aside for low-income individuals. This sad story made me question the prevalence and potential societal impacts of condo conversions. Are they occuring equitably or are segments of the population targeted more frequently? Which areas are specifically convertted? What economic incentives exist for condo conversions? 
+				
+				By analyzing data on these conversions and uncovering trends, the nature of condo conversions in Boston can be further understood, providing insight to residents, building owners, and policy makers. First, I wanted to direct my focus into understanding which buildings are likely suspects for conversion, potentially identifying trends in conversions. Next, I wanted to find areas in Boston that experienced the most conversions to clarify the motivations behind these decisions and their geographic/economic ties. Finally, I wanted to better explore the effect of these changes on property and land values, displaying the financial repercussions of these decisions. Ultimately, my guiding questions were focused on the motivations and effects of condo conversions in Boston, with more focused subquestions in each section.
+
+				These larger questions lead me to generate the following three questions for my analysis.
 			</p>
 			<ol>
 				<li>What buildings are most likely to get converted?</li>
@@ -33,11 +37,11 @@
 
 		<section>
 			<h2>Discoveries & Insights</h2>
-			Each of the questions were explored with an initial exploration into the data quality and profiling of the fields. From there, there is a deep dive into the question and specific fields that may help to answer the question better.
+			Each of the questions were explored with an initial exploration into the data quality and profiling of the fields. A particular focus was directed towards data explored in the guiding questions, searching for potential lapses in data quality and observing base level trends. Following this analysis, there is a deep dive into the question and specific fields that may help to answer the question better.
 
 			<h3>Preliminary Dataset Understanding</h3>
 			<p>
-				Before even diving into a deeper analysis, I had to first figure out what each of the LU codes stood for. Based on the Property Assessment guidelines, here are the 
+				Before diving into a deeper analysis, I had to first figure out what each of the LU codes stood for. Based on the Property Assessment guidelines, here are the LU codes used in this dataset:
 				<ol>
 					<li>A - Residential 7 or more units</li>
 					<li>E - Tax exempt</li>
@@ -60,17 +64,17 @@
 			</p>
 
 			<figure>
-				<img src="1_a_raw.png" alt="" width="1000"/>
+				<img src="1_a_raw.png" alt="" width="80%"/>
 				<figcaption>
 				A bar chart of the building types, by the LU codes, prior to the conversion.
 			</figure>
 			
 			<p>
-				In the above figue, we see the spread of land use within the dataset. Residential land (R1, R2, R3) is the most prevalent with commerical right behind that. However, we notice there are some duplicates in the initial data with RL appearing a few times. Therefore, we must clean up this to fully analyse the impact. This part of the analysis will be conducted further in the first question deep dive.
+				In the above figure, we see the spread of land use prior to conversion within the dataset. Residential land (R1, R2, R3) is the most prevalent followed by commerical. However, we notice there are some duplicates in the initial data with RL appearing a few times. Therefore, we must clean up this to fully analyse the impact. This part of the analysis will be conducted further in the first question deep dive.
 			</p>
 
 			<figure>
-				<img src="1_a_raw_year_built.png" alt="" width="1000"/>
+				<img src="1_a_raw_year_built.png" alt="" width="80%"/>
 				<figcaption>
 				A histogram of the buildings built in a specific year. The years are in 10 year buckets.
 			</figure>
@@ -80,19 +84,19 @@
 			</p>
 
 			<figure>
-				<img src="3_a_raw_total.png" alt="" width="1000"/>
+				<img src="3_a_raw_total.png" alt="" width="80%"/>
 				<figcaption>
 				A scatter plot of the Post Conversion Year vs. the Total Value of Property. We make sure to filter out all the properties that have the Total Value prior and post.
 			</figure>
 
 			<p>
-				The above scatter chart is helping to visualize the distribution of the post years and the total values. We find some initial insights that are quite interesting. First, there are several gaps in the data, as this dataset claims there were no post years in 2018, 2021, and 2022. Since there is no clear understanding as to why there is a lack of data, we examined the relationship between the prior and post years. Based on the data cleaning, all the prior years are the year of the conversion and the post year is plus one to the prior year. Additionally, it is interesting that most of property values cluster around the lower values of 0M to 10M. 
+				The above scatter chart helps to visualize the distribution of the post conversions and the total values of the properties. We find some initial insights that are quite interesting. First, there are several gaps in the data, as this dataset claims there were no post years in 2018, 2021, and 2022. Since there is no clear understanding as to why there is a lack of data, we examined the relationship between the prior and post years. Based on the data cleaning, all the prior years are the year of the conversion and the post year is plus one to the prior year. Additionally, it is interesting that most of property values cluster around the lower values of of $0M to $10M with a few substantial outliers approaching $150M. Furthermore, another interesting trend is the substantial decrease in value of projects started in 2020 and the lack of data in 2021 and 2022. It could be predicted that these occurrences could be caused by the COVID-19 pandemic.
 			</p>
 
 			<h3>What buildings are most likely to get converted?</h3>
 			
 			<p>
-				We continue to hear in the news that many buildings are getting converted into condos. Is there a correlation between certain attributes about a building and the likelihood that it gets converted? 
+				We continue to hear in the news that many buildings are being converted into condos, but there is little information on which buildings are being targeted. This information is valuable to residents and business owners who are particularly fearful of a condo conversion. To explore these trends, a few key questions are being explored. First, is there a correlation between certain attributes about a building and the likelihood that it gets converted?
 			</p>
 
 			<p>
@@ -104,18 +108,18 @@
 			</p>
 
 			<figure>
-				<img src="1_b_comparison.png" alt="" width="1000"/>
+				<img src="1_b_comparison.png" alt="" width="80%"/>
 				<figcaption>
 					Two bar charts comparing number of properties with land use labels prior and post conversion.
 				</figcaption>
 			</figure>
 
-			<p>We instantly notice a sharp change in the distribution of the land use types. There is a great increase in condominiums after the conversions of the buildings and stark reduction in the number of residential units. Specifically, "CM" accounts for the majority of all the land use in Boston after the conversions, as per this dataset.</p>
+			<p>We instantly notice a sharp change in the distribution of the land use types. There is a great increase in condominiums after the conversions of the buildings and stark reduction in the number of residential units. Specifically, "CM" accounts for the majority of all the land use in Boston after the conversions, as per this dataset. Furthermore, a large portion of conversions are residential buildings with multiple families, suggesting many of these renters were faced with an impending housing crisis.</p>
 
 			<p>Seeing the total numbers before and after, I wonder what types of buildings are most likely to convert into other buildings?</p>
 
 			<figure>
-				<img src="1_c_heatmap.png" alt="" width="1000"/>
+				<img src="1_c_heatmap.png" alt="" width="80%"/>
 				<figcaption>
 				Heatmap of the land use code prior to conversion to the land use code post conversion. The colors are generated based on the count of the post conversion properties with the label.
 				</figcaption>
@@ -126,7 +130,7 @@
 			<p>At the same time, it is still quite difficult to understand what percentage of the "CM" conversions are attributed to each of the land use labels / property types.</p>
 			
 			<figure>
-				<img src="1_d_pie_chart.png" alt="" width="1000"/>
+				<img src="1_d_pie_chart.png" alt="" width="80%"/>
 				<figcaption>
 				A pie chart of the prior properties (with land use labels) that were converted into "CM" type.
 				</figcaption>
@@ -136,7 +140,7 @@
 			
 			<p>Beyond the building type, the year that the original building is built can also impact if there is a conversion.</p>
 			<figure>
-				<img src="1_e_built_histogram.png" alt="" width="1000"/>
+				<img src="1_e_built_histogram.png" alt="" width="80%"/>
 				<figcaption>
 				A histogram of the number of properties built in a specific year. The years are in 10 year buckets and the data has been cleaned to remove data that is outside of 1700-2024.
 				</figcaption>
@@ -149,7 +153,7 @@
 
 			<p>Now, since we have seen the type of buildings or properties that undergo these conversions, there might be a correlation between the location of properties and the chance of the property having a conversion. As such, we being analyze the different zipcodes and the number of conversions in each.</p>
 			<figure>
-				<img src="2_b_num_conversions.png" alt="" width="1000"/>
+				<img src="2_b_num_conversions.png" alt="" width="80%"/>
 				<figcaption>
 				A map of the number of conversions based on each zipcode.
 				</figcaption>
@@ -159,7 +163,7 @@
 			
 			<p>I wonder how the city of Boston has changed from before the conversions to now? Specifically, how has the prevalence of certain land use types changed in Boston</p>
 			<figure>
-				<img src="2_c_multi_map.png" alt="" width="1000"/>
+				<img src="2_c_multi_map.png" alt="" width="80%"/>
 				<figcaption>
 				A series of maps to depict the change in land use prior and post property conversions. The top row shows the prior property conversions for the city of Boston for CM, CD, R2, and R3. The bottom row shows the post property conversions for the city of Boston for CM, CD, R2, and R3.
 				</figcaption>
@@ -172,7 +176,7 @@
 			<p>Whenever you hear about condo conversions, it is usually associated with the motivation to make money. Consequently, it is quite fitting to take a look into how the valuation of various aspects of the property change after a conversion.</p>
 			
 			<figure>
-				<img src="3_b_cleaned_total.png" alt="" width="1000"/>
+				<img src="3_b_cleaned_total.png" alt="" width="80%"/>
 				<figcaption>
 				A plot of the median change in total value of the property based on the post year of conversion
 				</figcaption>
@@ -180,7 +184,7 @@
 			<p>To construct the figure above, we calculated the change in the total value of the property (post value - prior value). From there, the median for each post year was plotted. The median was picked in the case of any outliers to ensure no heavy influences on the data were present. Building off of the figure in our preliminary analysis, we still see gaps in our data which is expected. However, in 2020, there is a negative change in total valuation of the property. This is plausible due to the start of the pandemic; there were lots of fluctuations in the market. Additionally, the change in total value is quite low for 2024, but since it is only the beginning of the year, we may not have the complete picture of the data just yet. </p>
 
 			<figure>
-				<img src="3_c_building_value.png" alt="" width="1000"/>
+				<img src="3_c_building_value.png" alt="" width="80%"/>
 				<figcaption>
 				A bar graph of the median change in building value based on the land use category.
 				</figcaption>
@@ -188,7 +192,7 @@
 			<p>To breakdown the valuation, we examine the building value. Most buildings increase in value after the conversion, as send in the plot. RC and R4 are exceptions that may need further investigation to understand exactly why they are decreasing in value. Also, R2, R3, and CD types don't yield much increase in building valuation. Could this be because there is such a high volume of these conversions and not everyone is guaranteed to succeed? Or, are there are factors at play that are contributing to their high volume?</p>
 
 			<figure>
-				<img src="3_d_land_value.png" alt="" width="1000"/>
+				<img src="3_d_land_value.png" alt="" width="80%"/>
 				<figcaption>
 				A map of the median change in land value between prior and post conversion based on zipcode.
 				</figcaption>
@@ -201,7 +205,13 @@
 		<section>
 			<h2>Summary</h2>
 
-			<p>WRITE FINAL SUMMARY HERE.</p>
+			<p>Boston has a severe housing crisis. Recently, many articles are told the story of buildings being converted into condos, and residents being displaced to find new places. I was interested in learning more about the history of these condo conversions and understanding how they impact Boston's population.</p>
+
+			<p>An initial glance at the dataset reveals potential gaps in data collection for certain post years. Additionally, there may be default or null values that impact the cleanliness of the data. Lastly, sanity checks were completed to ensure that prior and post property conversions made sense.</p>
+
+			<p>Through the deeper analysis of condo conversions in Boston, we notice a significant shift in the city's housing landscape. Older buildings, properties built in the early 1900s, were part of a significant number of conversions. A geographic analysis revealed that conversions were more frequent in certain zip codes (02127, 02130, 02131), suggesting a pattern of targeting areas with potentially lower-income households and more affordable housing. To examine the finanical incentives that might be available for property conversions, we found that there was mostly an increase in building, land, and total valuation when a conversion happened. </p>
+				
+			<p>A shift towards condominiums has altered Boston's residential areas, potentially affecting the city's socioeconomic diversity.</p>
 		</section>
 	</main>
 </body>
