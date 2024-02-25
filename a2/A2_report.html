@@ -91,7 +91,13 @@
 
 			<h3>What buildings are most likely to get converted?</h3>
 			
-			We continue to hear in the news that many buildings are getting converted into condos. Is there a correlation between certain attributes about a building and the likelihood that it gets converted? To investigate this, I first looked into what types of building are most prevalent prior to any conversion.
+			<p>
+				We continue to hear in the news that many buildings are getting converted into condos. Is there a correlation between certain attributes about a building and the likelihood that it gets converted? 
+			</p>
+
+			<p>
+				To investigate this, I first looked into what types of building are most prevalent prior to any conversion.
+			</p>
 
 			<p>
 				After cleaning up the duplicate labels, we compare the building types prior to the conversion and the building types post the conversion.
@@ -118,6 +124,7 @@
 			<p>To visualize the land use label to land use label conversion, I generated a heatmap to see which land use labels are descreasing most frequently and which land use labels are increasing. In the heatmap, the "CM" column shows the greatest amount of activity with special attention from the residential land as expected. We also notice that very few properties are converted to be tax exempt or residential. The heatmap indicates through the darkness of the color the number of property conversions of that type.</p>
 
 			<p>At the same time, it is still quite difficult to understand what percentage of the "CM" conversions are attributed to each of the land use labels / property types.</p>
+			
 			<figure>
 				<img src="1_d_pie_chart.png" alt="" />
 				<figcaption>
@@ -125,14 +132,20 @@
 				</figcaption>
 			</figure>
 
-			<p>Confirming our suspicions from earlier, we can early tell that the </p>
+			<p>Confirming our suspicions from earlier, we can tell that the residential buildings, R2 and R3, really contributed to the CM land use type. It makes sense that 2-family and 3-family land was frequently converted into condominiums. Also, it was interesting that CD, another condominium type for residential condominiums, converted into CM as well. CM is the most general of the condos. </p>
+			
+			<p>Beyond the building type, the year that the original building is built can also impact if there is a conversion.</p>
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="1_e_built_histogram.png" alt="" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+				A histogram of the number of properties built in a specific year. The years are in 10 year buckets and the data has been cleaned to remove data that is outside of 1700-2024.
 				</figcaption>
 			</figure>
+			<p>In on our preliminary analysis, we had constructed a very raw / initial histogram. However, in this revised version, we can see that most of the properties are built in 1900-1909. There are two peaks in the data: one around the early 1900s and one in 2010s. There is a clear decrease in the number of properties in the 1930s-1970s which can make sense with the Great Depression, World War II, and the Baby Boom of the 50s. Many families were seeking the "American Dream" and leaving big cities for the suburbs. While we cannot know for sure, there might not have been many buildings built during that time.</p>
 
+			<p>Through the analysis above, we have done a deep dive into the types of properties and the age of the properties are most likely to be converted.</p>
+			
+			<h3>Where do condo conversions happen in Boston?</h3>
 			<figure>
 				<img src="IMAGE_FILENAME" alt="" />
 				<figcaption>
